@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script>
+    <!--font awesome resourse link-->
+    <script
+    src="https://kit.fontawesome.com/a5486fc9da.js"
+    crossorigin="anonymous"
+  ></script>
+  <!-- google font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap" rel="stylesheet">
+<!-- linking local css files -->
+    <link rel="stylesheet" href="style.css" /> 
+    <!-- <link  href="script.js" /> -->
+  </head>
+  <body>
+ 
+   <div class="containers">
+       <h1> Password Generator</h1>
+
+       <div class="display_container">
+        <input readonly placeholder="Password" class="display" data-passwordDisplay>
+          <!-- now   data-passwordDisplay is custom attribut -->
+          <!-- placeholder starting mein kya show hoga -->
+          <button class="copybtn" data-copy >
+            <span class="tooltip" data-copyMsg></span>
+            <!-- <img src=""  width="23" height="23"> -->
+            <i class="fa-regular fa-copy" ></i>
+          </button>  
+         </div>
+
+     <div class="inputContainer">
+        <!-- password length section-->
+        <div class="lengthContainer"> 
+            <p> Password Length</p>
+            <p data-lengthNumber>0</p> <!-- data-lengthNumber is custom attribute  custom attibute is nothing just like custom id , class to access it -->
+        </div>
+         <!-- slider-->
+         <input type="range" min="1" max="20"  class="slider" step="1" data-lengthSlider >   <!--data-lengthslider-->
+        
+         <!-- checkbox -->
+         <div class="check">
+         <input type="checkbox" id="uppercase">
+         <label for="uppercase">Include Uppercase letters</label> 
+         </div>
+         <div class="check">
+         <input type="checkbox" id="lowercase">
+         <label for="lowercase">Include Lowercase letters</label> 
+        </div>
+        <div class="check">
+         <input type="checkbox" id="numbers">
+         <label for="numbers">Include Numbers</label> 
+        </div>
+        <div class="check">
+         <input type="checkbox" id="symbols">
+         <label for="symbols">Include Symbols</label> 
+        </div>
+        <!-- strength section-->
+         <div class="strength-container">
+            <p>Strength</p>
+            <div class="indicator" data-indicator ></div> <!-- data-indicator is custom attribute-->
+         </div>
+         <!--PASSWORD GENERATOR-->
+         <div>
+            <button class="generateButton">GENERATE PASSWORD</button>
+         </div>
+        </div>
+
+   </div>
+     
+   
+
+    <script src="script.js" charset="UTF-8"></script>
+  </body>
+</html>

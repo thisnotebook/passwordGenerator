@@ -1,0 +1,272 @@
+*,
+*::before
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+/*upper data just starting css we have to change later as our need && no need to add not worry*/
+
+/*this is global css to use later */
+:root{
+
+    --dk-violet: hsl(268,75%,9%);
+    --lt-violet: hsl(268,47%,21%);
+    --lt-violet2: hsl(268,89%,26%);
+    --vb-violet: hsl(285,91%,52%);
+    --vb-violet2: hsl(290,70%,36%);
+
+    --vb-yellow: hsl(52,100%,52%);
+
+    --pl-white: hsl(0,0%,100%);
+
+    --vb-cyan: hsl(176,100%,44%);
+    --vb-cyan2: hsl(177,92%,70%);
+   
+    --dk-text: hsl(198,20%,13%);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    justify-content: center;
+    
+  background: linear-gradient(231deg, rgba(22,6,40,1) 0%, rgba(52,28,79,1) 50%, rgba(88,7,125,1) 100%);
+  /*to generat this type of gradient is "angrytools" */
+}
+.containers{
+    width: 90%;
+    width: 400px;
+}
+
+h1{
+    color: var(--pl-white);
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1;
+}
+
+.display_container{
+    position: relative; /*why relative because later there have a input on it and give those position absolute*/
+    background-color: var(--dk-violet);
+    border-radius: 1rem;
+    border-bottom: 0.35rem solid var(--lt-violet2);
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+}
+.display{
+    width: 100%;
+    background-color: transparent;
+    padding: 1.5rem 1rem;
+    color: var(--vb-yellow);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+    border: none;
+}
+
+.display::placeholder{
+    position: absolute; /*overlap karaya h issliye absolute hogi*/
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--vb-yellow);
+    opacity: 0.85;
+    text-transform: uppercase;
+    
+    transform: translateY(-50%);
+}
+.display_container button{
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);/*to bring element upward*/
+}
+
+.inputContainer{
+    width: 100%;/*it is 100% of its parent width which is "containers"*/
+   
+    background-color: var(--dk-violet);
+    border-radius: 1rem;
+    padding: 2rem;
+    border-bottom: 0.35rem solid var(--lt-violet2);
+}
+.lengthContainer{
+    display: flex;
+    justify-content: space-between;/*to put two element at extremes use space - between*/
+    align-items: center;
+}
+
+.lengthContainer p:nth-child(1){           /* what is means : lengthcontainer have 3 child by this we can access their child by number 1 ,2 and so on*/
+     color:var(--pl-white);
+     font-size: 1.5rem;
+}
+
+.lengthContainer p:nth-child(2){
+    color : var(--vb-yellow);
+    opacity: 0.85;
+    font-size: 1.5rem;
+}
+.strength-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;  
+}
+
+.strength-container p{
+    color : var(--pl-white);
+    font-size: 1.5rem;
+}
+.indicator{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+.generateButton{        /* gernerateBtn*/
+     background-color: var(--vb-violet);
+     width: 100%; 
+     padding: 1rem , 0;
+     text-align: center;
+     border-radius: 0.75rem;
+     border-bottom: 0.25rem solid var(--vb-yellow);
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+     color: var(--vb-yellow);
+     font-weight: 600;
+     font-size: 1.5rem;
+}
+
+.check{
+    display: flex;
+    align-items: center;
+    margin: 1rem ,0;
+    gap: 0 1rem;
+}  
+
+.check input{
+    appearance: none; /* default design by brower is remove */
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--vb-cyan);
+    cursor: pointer;
+    position: relative;    /*why relative because jab hum tick karenge toh tick ki positioning absolute karni hogi issliye */
+    /*condition of absolute position :nearest ansertor relative hona chaiye ya  non static hona chaiye*/
+    border-radius: 0.35rem;
+}
+
+.check input:checked{
+    background-color: var(--vb-cyan);
+    
+}
+.check input:checked::before{
+    /* content: '✔️'; */
+    content: '✓';
+    position: absolute;
+    color:var(--dk-text);
+    font-size: 1.05rem;
+    font-weight: 600;
+    left: 50%;
+    top: -3.5px;
+    transform: translateX(-50%);
+}
+
+.check label{
+    color: var(--pl-white);
+    font-size: 1.25rem;
+    letter-spacing: 0.75px;
+}
+.slider{
+    appearance: none;
+    width: 100%;   /*100% of parents width*/
+   cursor: pointer; /* on hover cursor become pointer*/
+   height: 0.75rem;
+   background-color: var(--lt-violet);
+   border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  background-image: linear-gradient(var(--vb-violet),var(--vb-violet));
+  background-repeat: no-repeat;
+  border: none;
+  outline:none;
+}
+
+.slider::-webkit-slider-thumb{ /*-webkit-slider-thumb : this is pseudo element selector that selector the thumb element which circle on slider gola jise pakad ke slider ko change karte ho */
+       appearance: none;
+       position: relative;
+       height: 2rem;
+       width: 2rem;
+       border-radius: 50%;
+       background-color: var(--vb-yellow);
+       cursor:pointer;
+       margin-top: -3px;
+       box-shadow: 0px 0px 20px 0px rgba(255,229,61,0.50);
+       transition: all 100ms ease-in;
+}
+
+.slider:focus{
+    outline : 3px solid var(--vb-yellow);
+}
+.slider::-webkit-slider-thumb:hover{
+    outline : 2px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 25px 5px rgba(255,229,61,0.80);
+
+}
+/* webkit okh for chrome , brave etc but for firefox it not make changes*/
+/*------------------------------------add same code in - moz-range-thumb -------------------------------------*/
+ .slider::-moz-range-thumb{
+    appearance: none;
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: var(--vb-yellow);
+    cursor:pointer;
+    margin-top: -3px;
+    box-shadow: 0px 0px 20px 0px rgba(255,229,61,0.50);
+    transition: all 100ms ease-in;
+ }
+ .slider::-moz-range-thumb:hover{
+    outline : 2px solid var(--vb-yellow);
+    background-color: var(--dk-violet);
+    box-shadow: 0px 0px 25px 5px rgba(255,229,61,0.80);
+
+}
+/*-------------------------------------------------------------------------*/
+.copybtn{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--vb-cyan);
+}
+.tooltip{
+  position: absolute;
+  background-color: var(--vb-violet2);
+  color: var(--vb-yellow);
+  font-size: 1.25rem;
+  top: -35px;
+  left: -25px;
+  padding: 5px 10px;
+  border-radius: 1rem;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: bottom;
+  transition: all 250ms ease-in-out;    
+}
+
+ .tooltip.active{
+    opacity: 1;
+    transform: scale(1);
+ }
